@@ -21,6 +21,7 @@ public class ProviderDTO {
     private String name;
     private Long code;
     private Long grade;
+    private String type;
 //    private Map<Long,Double> services = new HashMap<>();
 
     public void init()

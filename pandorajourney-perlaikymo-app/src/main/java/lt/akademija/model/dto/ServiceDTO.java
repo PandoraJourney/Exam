@@ -8,10 +8,12 @@ import lt.akademija.model.entity.Services;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 
+import java.io.Serializable;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ServiceDTO {
+public class ServiceDTO implements Serializable{
     private static Logger logger = Logger.getLogger(ServiceDTO.class);
     private Long id;
     private String name;

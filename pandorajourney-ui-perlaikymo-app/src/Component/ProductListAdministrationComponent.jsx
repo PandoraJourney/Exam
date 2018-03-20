@@ -10,7 +10,7 @@ class ProductListAdministrationComponent extends Component {
   
   render() {
     var itemsHtml = this.props.products.map((item, index) => {
-      var url = '/admin/services/' + item.id;
+      var url = '/admin/'+this.props.type+'/'+ item.id;
       return (
         <tr key={index}>
           <td>{index + 1}</td>
@@ -22,7 +22,7 @@ class ProductListAdministrationComponent extends Component {
     console.log(this.context)
     return (
       <div>
-        <Link className="btn btn-success" to='/admin/products/new'>{this.props.button}</Link>
+        <Link className="btn btn-success" to={'/admin/'+this.props.type+'/new'}>Add new</Link>
         <table className="table">
           <thead>
             <tr>
@@ -38,9 +38,9 @@ class ProductListAdministrationComponent extends Component {
       );
   }
 }
-ProductListAdministrationComponent.propTypes = {
-  products: PropTypes.array.isRequired,
+// ProductListAdministrationComponent.propTypes = {
+//   products: PropTypes.array.isRequired,
   
-};
+// };
 
 export default ProductListAdministrationComponent;

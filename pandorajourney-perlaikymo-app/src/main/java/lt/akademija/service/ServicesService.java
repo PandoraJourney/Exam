@@ -1,8 +1,7 @@
 package lt.akademija.service;
 
-import lt.akademija.model.entity.Provider;
+import lt.akademija.model.dto.ServiceDTO;
 import lt.akademija.model.entity.Services;
-import lt.akademija.model.dto.ProductDTO;
 import lt.akademija.repository.ServicesRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -53,7 +52,7 @@ public class ServicesService {
     }
 
     @Transactional
-    public void create(Services dto) {
+    public void create(ServiceDTO dto) {
 //        if(this.dto != null)
 //        {
 //            logger.info("DTO is still alive");
@@ -70,7 +69,7 @@ public class ServicesService {
     }
 
     @Transactional
-    public void update(Long id, Services dto) {
+    public void update(Long id, ServiceDTO dto) {
         Services entity = repo.getOne(id);
         if (entity != null) {
             BeanUtils.copyProperties(dto, entity, "id");

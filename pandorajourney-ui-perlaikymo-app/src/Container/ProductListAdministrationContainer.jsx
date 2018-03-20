@@ -10,14 +10,16 @@ class ProductListAdministrationContainer extends Component{
      constructor(context) {
         super(context)
         this.state = { services: [],
-                        providers:[] };
+                        providers:[],
+                      type1:'' ,
+                      type2:''};
       }
     
       componentWillMount() {
-        axios.get('https://localhost:808/services').then((response) => {
+        axios.get('https://localhost:8080/services/all').then((response) => {
           this.setState(()=>{return{ services: response.data} });
         });
-        axios.get('https://localhost:808/providers').then((response) => {
+        axios.get('https://localhost:8080/providers/all').then((response) => {
           this.setState(()=>{return{ providers: response.data} });
         });
       }
@@ -34,10 +36,9 @@ class ProductListAdministrationContainer extends Component{
                       </thead>
                       <tbody>
                       <tr>
-                          <td><ProductListAdministrationComponent products={this.state.service} button={"Add service"} /></td>
-                        <td><ProductListAdministrationComponent products={this.state.providers} button={"Add provider"} /></td>
+                          <td><ProductListAdministrationComponent products={this.state.service} type={"service"} /></td>
+                        <td><ProductListAdministrationComponent products={this.state.providers} type={"provider"}/></td>
                         </tr>
-                  
                       </tbody>
                     </table>
             </div>

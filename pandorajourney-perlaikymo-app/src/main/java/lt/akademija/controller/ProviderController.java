@@ -4,10 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lt.akademija.model.dto.ProviderDTO;
 import lt.akademija.model.entity.Provider;
-import lt.akademija.model.entity.Services;
-import lt.akademija.model.dto.ProductDTO;
 import lt.akademija.service.ProviderService;
-import lt.akademija.service.ServicesService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,11 +17,13 @@ import java.util.stream.Collectors;
 @RestController
 @Api(value = "provider")
 @RequestMapping(value = "api/provider")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProviderController {
 
     @Autowired
     private ProviderService service;
 
+    //The only place prototype bean is used
     @Autowired (required = false)
     private ProviderDTO dto;
 

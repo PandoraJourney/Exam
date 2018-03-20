@@ -11,14 +11,20 @@ class ProductAdministrationContainer extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleBack = this.handleBack.bind(this);
         this.state = {
-            product:
+            service:
                 {
+                    id:'',
                     title: '',
                     image: '',
                     description: '',
-                    quantity: '',
-                    price: ''
-                }
+                },
+            provider:{
+                    id:'',
+                    title:'',
+                    City:'',
+                    Code:'',
+                    Grade:'',
+            }
         }
     }
     handleBack(){

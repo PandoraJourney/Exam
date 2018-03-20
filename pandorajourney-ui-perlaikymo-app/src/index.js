@@ -27,13 +27,15 @@ ReactDOM.render(
   <Router history={browserHistory}>
   <Route path="/" component={App}>
       {/* <IndexRoute component={ProductListContainer} /> */}
-      <Route path="/products" component={ProductListContainer} />
-      <Route path="/products/:id" component={ProductDetailsContainer} />
-      <Route path={"/cart-details"} component={CartDetailsContainer} />
+      <Route path="/services" component={ProductListContainer} />
+      <Route path="/services/:id" component={ProductDetailsContainer} />
+      <Route path={"/service-history"} component={CartDetailsContainer} />
       <Route path="/admin" component={Admin} >
         <IndexRoute component={ProductListAdministrationContainer} />
-        <Route path="products/new" component={ProductAdministrationContainer} />
-        <Route path="products/:productId" component={ProductAdministrationContainer} />
+        <Route path="services/new" component={ProductAdministrationContainer} />
+        <Route path="services/:serviceId" component={ProductAdministrationContainer} />
+        <Route path="providers/new" component={ProductAdministrationContainer} />
+        <Route path="providers/:providerId" component={ProductAdministrationContainer} />
       </Route>
       <Route path="*" component={NoMatch} />
     </Route>

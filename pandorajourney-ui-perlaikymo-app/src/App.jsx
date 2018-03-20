@@ -16,7 +16,7 @@ class App extends Component {
             <nav className="navbar navbar-inverse">
               <div className="container-fluid">
                 <div className="navbar-header">
-                  <Link className="navbar-brand" to="/products" activeClassName="active">Home</Link>
+                  <Link className="navbar-brand" to="/services" activeClassName="active">Home</Link>
                 </div>
                 <ul className="nav navbar-nav">
                   <li><Link to="/admin" activeClassName="active">Admin</Link></li>
@@ -28,7 +28,7 @@ class App extends Component {
                   
                 {/* </form> */}
                 <ul className="nav navbar-nav navbar-right">
-                  <li><Link to="/cart-details">{UserService.user} <CartSummaryContainer/></Link></li>
+                  <li><Link to="/service-history">{UserService.user} <CartSummaryContainer/></Link></li>
                 </ul>
                </div>
             </nav>

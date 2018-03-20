@@ -10,13 +10,13 @@ class ProductDetailsContainer extends Component {
     super(context, props)
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.handleBack = this.handleBack.bind(this);
-    this.state = { product: "" };
+    this.state = { providers: "" };
   }
 
   componentWillMount() {
-    var index = this.props.params.id - 1;
-    axios.get('https://itpro2017.herokuapp.com/api/products').then((response) => {
-      this.setState({ product: response.data[index] });
+    var index = this.props.params.id;
+    axios.get('https:/localhost:8080/providers/'+index).then((response) => {
+      this.setState({ product: response.data });
     });
   }
 

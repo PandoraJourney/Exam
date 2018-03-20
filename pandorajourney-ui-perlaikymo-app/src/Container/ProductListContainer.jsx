@@ -15,14 +15,14 @@ class ProductListContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://itpro2017.herokuapp.com/api/products').then((response) => {
+    axios.get('https://localhost:8081/api/services/').then((response) => {
       this.setState({ products: response.data });
     });
   }
 
-  handleDetailsClick(productId) {
+  handleDetailsClick(serviceId) {
     return (() => {
-      this.context.router.push('/products/' + productId, { id: productId });
+      this.context.router.push('/services/' + serviceId, { id: serviceId });
     });
   }
 

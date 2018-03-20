@@ -10,7 +10,7 @@ class ProductListAdministrationComponent extends Component {
   
   render() {
     var itemsHtml = this.props.products.map((item, index) => {
-      var url = '/admin/products/' + item.id;
+      var url = '/admin/services/' + item.id;
       return (
         <tr key={index}>
           <td>{index + 1}</td>
@@ -22,7 +22,7 @@ class ProductListAdministrationComponent extends Component {
     console.log(this.context)
     return (
       <div>
-        <Link className="btn btn-success" to='/admin/products/new'>Add new product</Link>
+        <Link className="btn btn-success" to='/admin/products/new'>Add new service</Link>
         <table className="table">
           <thead>
             <tr>

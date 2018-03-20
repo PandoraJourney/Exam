@@ -1,0 +1,48 @@
+/package-lock.json
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env
+<<<<<<< HEAD
+/.vscode
+=======
+.vscode/
+>>>>>>> develop
+
+################################################################################
+# IDE specific:
+################################################################################
+# Eclipse
+.classpath
+.project
+.settings/
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# ignore react builds in src folder
+src/main/resources/public/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar

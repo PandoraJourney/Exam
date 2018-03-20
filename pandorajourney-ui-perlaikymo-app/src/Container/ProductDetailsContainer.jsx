@@ -10,14 +10,17 @@ class ProductDetailsContainer extends Component {
     super(context, props)
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.handleBack = this.handleBack.bind(this);
-    this.state = { providers: "" };
+    this.state = { providers: [],
+                    service:"" };
   }
 
   componentWillMount() {
     var index = this.props.params.id;
-    axios.get('https:/localhost:8080/providers/'+index).then((response) => {
-      this.setState({ product: response.data });
+    axios.get('https:/localhost:8080/providers/service/'+index).then((response) => {
+      this.setState({ providers: response.data });
     });
+    axios.get('https:/localhost:8080/service/'+index).then((response) => {
+      this.setState({ service: response.data });});
   }
 
 
@@ -40,7 +43,7 @@ class ProductDetailsContainer extends Component {
 
   render() {
     return (
-      <ProductDetailsComponent product={this.state.product} onAddToCart={this.handleAddToCart} onBack={this.handleBack} />
+      <ProductDetailsComponent service={this.state.service} providers={this.state.providers} onAddToCart={this.handleAddToCart} onBack={this.handleBack} />
     );
   }
 };

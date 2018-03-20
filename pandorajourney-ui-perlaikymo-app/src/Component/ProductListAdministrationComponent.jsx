@@ -22,7 +22,7 @@ class ProductListAdministrationComponent extends Component {
     console.log(this.context)
     return (
       <div>
-        <Link className="btn btn-success" to='/admin/products/new'>Add new service</Link>
+        <Link className="btn btn-success" to='/admin/products/new'>{this.props.button}</Link>
         <table className="table">
           <thead>
             <tr>

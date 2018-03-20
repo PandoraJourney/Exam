@@ -9,18 +9,38 @@ class ProductListAdministrationContainer extends Component{
     
      constructor(context) {
         super(context)
-        this.state = { products: [] };
+        this.state = { services: [],
+                        providers:[] };
       }
     
       componentWillMount() {
-        axios.get('https://itpro2017.herokuapp.com/api/products').then((response) => {
-          this.setState(()=>{return{ products: response.data} });
+        axios.get('https://localhost:808/services').then((response) => {
+          this.setState(()=>{return{ services: response.data} });
+        });
+        axios.get('https://localhost:808/providers').then((response) => {
+          this.setState(()=>{return{ providers: response.data} });
         });
       }
     
       render() {
         return (
-            <ProductListAdministrationComponent products={this.state.products} />
+          <div>
+            <table className="table">
+                      <thead>
+                        <tr>
+                          <th>Services</th>
+                          <th>Providers</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td><ProductListAdministrationComponent products={this.state.service} button={"Add service"} /></td>
+                        <td><ProductListAdministrationComponent products={this.state.providers} button={"Add provider"} /></td>
+                        </tr>
+                  
+                      </tbody>
+                    </table>
+            </div>
         );
       }
     }

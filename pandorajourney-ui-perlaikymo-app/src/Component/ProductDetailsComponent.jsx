@@ -5,7 +5,7 @@ import image from './samsung.jpg'
 
 class ProductDetailsComponent extends Component{ 
     render(){
-        var itemsHtml = this.props.products.providers.map((item, index) => {
+        var itemsHtml = this.props.providers.map((item, index) => {
             // var url = '/services/' + item.id;
             return (
               <tr key={index}>
@@ -13,7 +13,7 @@ class ProductDetailsComponent extends Component{
                 {/* <td><img src={item.image} /></td> */}
                 {/* <td><Link to={url}>{item.title}</Link></td> */}
                 <td>{item.title}</td>
-                <td>Price: {item.price} EUR</td>
+                <td>Price: {item.price} EUR  <button style={{ marginRight: '10px' }} className="btn btn-success" onClick={this.props.onAddToCart}>To cart</button></td>
               </tr>
             );
           });
@@ -24,8 +24,9 @@ class ProductDetailsComponent extends Component{
                     <img className="media-object" src={image} alt="..." />
                 </div>
                 <div className="media-body">
-                    <h4 className="media-heading">{this.props.product.title}</h4>
-                    <p>{this.props.product.description}</p>
+                    <h4 className="media-heading">{this.props.service.title}</h4>
+                    <p>{this.props.service.description}</p>
+                    <p>{this.props.service.category}</p>
                     <table className="table">
                       <thead>
                         <tr>
@@ -41,7 +42,6 @@ class ProductDetailsComponent extends Component{
             </div>
             <div className="help-text">
                 <div style={{ paddingTop: '10px' }}>
-                    <button style={{ marginRight: '10px' }} className="btn btn-success" onClick={this.props.onAddToCart}>To cart</button>
                     <button style={{ marginRight: '10px' }} className="btn btn-default" onClick={this.props.onBack}>Back</button>
                 </div>
             </div>

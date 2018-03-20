@@ -24,7 +24,7 @@ public class User {
     @Column(name = "LAST_NAME", nullable = false)
     private String lastName;
 
-
+    @Column(name = "ADDRESS")
     private String address;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
@@ -33,6 +33,17 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "service_id"))
     private List<Services> orders;
 
+    void addService(Services service)
+    {
+        this.orders.add(service);
+        service.addUser(this);
+    }
+
+    void removeService(Services service)
+    {
+        this.orders.remove(service);
+        service.removeUser(this);
+    }
 //
 //    @ElementCollection
 ////    @CollectionTable(name = "Merch", joinColumns = @JoinColumn(name = "BUERS_ID"))

@@ -8,7 +8,17 @@
 <!--<context:annotation-config />-->
 
 
-    <bean id="TabletDTO" class="lt.akademija.model.dto.ProductDTO" scope = "prototype" lazy-init="true"
+    <bean id="ProviderDTO" class="lt.akademija.model.dto.ProviderDTO" scope = "prototype" lazy-init="true"
+          init-method="init" destroy-method="destroy">
+        <!--<property name="screen" value="20" />-->
+    </bean>
+
+    <bean id="ServiceDTO" class="lt.akademija.model.dto.ServiceDTO" scope = "prototype" lazy-init="true"
+          init-method="init" destroy-method="destroy">
+        <!--<property name="screen" value="20" />-->
+    </bean>
+
+    <bean id="UserDTO" class="lt.akademija.model.dto.UserDTO" scope = "prototype" lazy-init="true"
           init-method="init" destroy-method="destroy">
         <!--<property name="screen" value="20" />-->
     </bean>

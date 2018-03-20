@@ -47,11 +47,23 @@ public class ServicesService {
     }
 
     @Transactional
+    public Long serviceTaken(Long servId)
+    {
+        return repo.countById(servId);
+    }
+
+    @Transactional
     public void create(Services dto) {
 //        if(this.dto != null)
 //        {
 //            logger.info("DTO is still alive");
 //        }
+        Services oldObject = repo.findOneByName(dto.getName());
+        if(oldObject != null)
+        {
+            logger.info("Object with name: "+ dto.getName()+"already exists");
+            throw new IllegalArgumentException("Object with name: "+ dto.getName()+"already exists");
+        }
         Services entity = new Services();
         BeanUtils.copyProperties(dto, entity);
         repo.save(entity);

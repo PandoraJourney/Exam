@@ -1,13 +1,9 @@
-package lt.akademija.model.entity.dto;
+package lt.akademija.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.log4j.Logger;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Data
 @NoArgsConstructor

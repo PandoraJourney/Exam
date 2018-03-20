@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>PandoraJourney-app</name>
+    <name>PandoraJourney-perlaikymo-app</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

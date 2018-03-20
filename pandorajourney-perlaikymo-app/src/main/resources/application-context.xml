@@ -8,8 +8,8 @@
 <!--<context:annotation-config />-->
 
 
-    <bean id="TabletDTO" class="lt.akademija.model.entity.dto.ProductDTO" scope = "prototype" lazy-init="true"
-                init-method="init" destroy-method="destroy">
+    <bean id="TabletDTO" class="lt.akademija.model.dto.ProductDTO" scope = "prototype" lazy-init="true"
+          init-method="init" destroy-method="destroy">
         <!--<property name="screen" value="20" />-->
     </bean>
 

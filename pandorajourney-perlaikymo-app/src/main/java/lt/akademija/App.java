@@ -1,20 +1,15 @@
 package lt.akademija;
 
-import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
-import lt.akademija.model.entity.dto.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -27,8 +22,6 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import org.springframework.data.domain.Pageable;
-
-import java.util.TimeZone;
 
 @EnableSwagger2
 @SpringBootApplication

@@ -18,9 +18,9 @@ public class PriceQuantity {
 
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "buyer_id")
-//    private SimpleUser buyer;
+//    private User buyer;
 
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "product_id")
-//    private AbstractProduct product;
+//    private Services product;
 }

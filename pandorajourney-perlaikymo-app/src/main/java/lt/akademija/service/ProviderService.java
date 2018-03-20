@@ -1,42 +1,41 @@
 package lt.akademija.service;
 
-import lt.akademija.model.entity.SimpleUser;
-import lt.akademija.repository.SimpleUserRepository;
+import lt.akademija.model.entity.PriceQuantity;
+import lt.akademija.model.entity.Provider;
+import lt.akademija.repository.PriceQuantityRepository;
+import lt.akademija.repository.ProviderRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class UserService {
-
+public class ProviderService {
     @Autowired
-    private SimpleUserRepository repo;
+    private ProviderRepository repo;
 
     @Transactional
-    public List<SimpleUser> getAll() {
+    public List<Provider> getAll() {
         return repo.findAll();
     }
 
     @Transactional
-    public SimpleUser getOne(Long id) {
+    public Provider getOne(Long id) {
         return repo.getOne(id);
     }
 
     @Transactional
-    public void create(SimpleUser dto) {
-        SimpleUser entity = new SimpleUser();
+    public void create(Provider dto) {
+        Provider entity = new Provider();
         BeanUtils.copyProperties(dto, entity);
         repo.save(entity);
     }
 
     @Transactional
-    public void update(Long id, SimpleUser dto) {
-        SimpleUser entity = repo.getOne(id);
+    public void update(Long id, Provider dto) {
+        Provider entity = repo.getOne(id);
         if (entity != null) {
             BeanUtils.copyProperties(dto, entity, "id");
             repo.save(entity);
@@ -47,4 +46,5 @@ public class UserService {
     public void delete(Long id) {
         repo.delete(id);
     }
+
 }
